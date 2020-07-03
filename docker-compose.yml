@@ -9,8 +9,11 @@ services:
       - ./web/:/usr/src/web/
     ports:
       - 8000:8000
+      - 3000:3000
+      - 35729:35729
     env_file:
       - ./.env.dev
+    stdin_open: true
   
   db:
     container_name: psql
