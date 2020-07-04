@@ -8,7 +8,7 @@ Requirements:
 - Docker Compose
 
 ```bash
-docker-compose up -d --build
+$ docker-compose up -d --build
 $ docker-compose exec web npm start --prefix ./frontend/
 Compiled successfully!
 
@@ -22,3 +22,10 @@ To create a production build, use yarn build.
 ```
 
 Hot reload should be working upon saving your JavaScript files.
+
+## Production
+
+```bash
+$ docker-compose -f docker-compose.prod.yml up -d --build
+$ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
+```
