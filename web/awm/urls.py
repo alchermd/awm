@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import JsonResponse
 
-def test(request):
-    return JsonResponse({'detail': 'API Integration Works!'})
+from .views import FrontendAppView, test
 
 urlpatterns = [
     path('api/test/', test),
     path('admin/', admin.site.urls),
+    path('', FrontendAppView.as_view())
 ]
