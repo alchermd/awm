@@ -6,9 +6,12 @@ Requirements:
 
 - Docker
 - Docker Compose
+- NodeJS and NPM
 
 ```bash
-docker-compose up -d --build
+$ cp .env .env.dev # <- Update values as needed, but should be good as is
+$ npm install --prefix ./web/frontend/
+$ docker-compose up -d --build
 $ docker-compose exec web npm start --prefix ./frontend/
 Compiled successfully!
 
